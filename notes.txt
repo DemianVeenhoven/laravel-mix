@@ -1,0 +1,4 @@
+{{}} = blade
+@{{}} = vue
+
+"v-model='coupon'" = ":value='coupon' @input='coupon = $event.target.value'"
