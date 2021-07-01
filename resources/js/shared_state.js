@@ -4,7 +4,7 @@ let store = {
     }
 }
 
-new vue ({
+new Vue ({
     el: "#one",
 
     data: {
@@ -12,7 +12,7 @@ new vue ({
     }
 });
 
-new vue ({
+new Vue ({
     el: "#two",
     
     data: {

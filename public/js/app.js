@@ -1838,9 +1838,18 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _shared_state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared_state */ "./resources/js/shared_state.js");
+/* harmony import */ var _shared_state__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_shared_state__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _custom_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./custom_input */ "./resources/js/custom_input.js");
+/* harmony import */ var _custom_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_custom_input__WEBPACK_IMPORTED_MODULE_1__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+
+
 
 /***/ }),
 
@@ -1872,6 +1881,56 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/custom_input.js":
+/*!**************************************!*\
+  !*** ./resources/js/custom_input.js ***!
+  \**************************************/
+/***/ (() => {
+
+Vue.component("coupon", {
+  props: ["code"],
+  template: "\n        <input type=\"text\" :value=\"code\" @input=\"updateCode($event.target.value)\">\n    ",
+  methods: {
+    updateCode: function updateCode(code) {
+      this.$emit("input", code);
+    }
+  }
+});
+new Vue({
+  el: "#customInput",
+  data: {
+    coupon: "freebie"
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/shared_state.js":
+/*!**************************************!*\
+  !*** ./resources/js/shared_state.js ***!
+  \**************************************/
+/***/ (() => {
+
+var store = {
+  user: {
+    name: "John Doe"
+  }
+};
+new Vue({
+  el: "#one",
+  data: {
+    shared: store
+  }
+});
+new Vue({
+  el: "#two",
+  data: {
+    shared: store
+  }
+});
 
 /***/ }),
 
@@ -19355,6 +19414,30 @@ process.umask = function() { return 0; };
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

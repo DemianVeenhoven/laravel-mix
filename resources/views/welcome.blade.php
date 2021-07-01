@@ -11,7 +11,7 @@
         <div id="customInput">
             <!--<input type="text" v-model="coupon">-->
 
-            <coupon>
+            <coupon v-model="coupon">
         </div>
 
         <div id="one">
@@ -27,8 +27,6 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <script src="resources/js/app.js"></script>
-        <script src="resources/js/shared_state.js"></script>
-        <script src="resources/js/custom_input.js"></script>
+        <script src="/js/app.js"></script>
     </body>
 </html>
